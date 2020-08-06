@@ -1,0 +1,37 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 848409ee8ba454f42a5ddff137688a27, type: 3}
+  m_Name: ReferenceImageLibrary
+  m_EditorClassIdentifier: 
+  m_GuidLow: 5611282569904302587
+  m_GuidHigh: 13071694518720129435
+  m_Images:
+  - m_SerializedGuid:
+      m_GuidLow: 5010355927445411151
+      m_GuidHigh: 9572854329676909203
+    m_SerializedTextureGuid:
+      m_GuidLow: 10012844394183987180
+      m_GuidHigh: 1752135431083951273
+    m_Size: {x: 0.1, y: 0.1}
+    m_SpecifySize: 1
+    m_Name: ARGreen
+    m_Texture: {fileID: 0}
+  - m_SerializedGuid:
+      m_GuidLow: 5350415992702409967
+      m_GuidHigh: 13405795428888586398
+    m_SerializedTextureGuid:
+      m_GuidLow: 4009352681067290987
+      m_GuidHigh: 14458097138122737515
+    m_Size: {x: 0.1, y: 0.1}
+    m_SpecifySize: 1
+    m_Name: ARRed
+    m_Texture: {fileID: 0}
