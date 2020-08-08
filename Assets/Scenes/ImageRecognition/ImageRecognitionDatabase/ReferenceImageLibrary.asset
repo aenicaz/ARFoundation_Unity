@@ -23,7 +23,7 @@ MonoBehaviour:
       m_GuidHigh: 1752135431083951273
     m_Size: {x: 0.1, y: 0.1}
     m_SpecifySize: 1
-    m_Name: ARGreen
+    m_Name: popug
     m_Texture: {fileID: 0}
   - m_SerializedGuid:
       m_GuidLow: 5350415992702409967
@@ -33,5 +33,5 @@ MonoBehaviour:
       m_GuidHigh: 14458097138122737515
     m_Size: {x: 0.1, y: 0.1}
     m_SpecifySize: 1
-    m_Name: ARRed
+    m_Name: playstation_4
     m_Texture: {fileID: 0}
