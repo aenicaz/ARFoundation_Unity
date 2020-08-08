@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.XR.ARFoundation;
 using UnityEngine.XR.ARSubsystems;
 
@@ -10,14 +11,27 @@ public class ImageTracking : MonoBehaviour
 {
     [SerializeField] private GameObject[] placeablePrefabs;
     [SerializeField] private TMP_Text _tmpText;
-
+    [SerializeField] private Vector3 rotationSpeed = Vector3.zero;
+    [SerializeField] private Toggle rotationToggle;
+    
     private Dictionary<string, GameObject> spawnedPrefabs = new Dictionary<string, GameObject>();
     private ARTrackedImageManager _trackedImageManager;
     private GameObject _tmpGameObject = null;
-
+    private Slider _sliderScrollbar;
+    
     private void Awake()
     {
         _trackedImageManager = FindObjectOfType<ARTrackedImageManager>();
+        _sliderScrollbar = FindObjectOfType<Slider>();
+    }
+    private void Update()
+    {
+        if (rotationToggle.isOn)
+        {
+            rotationSpeed = new Vector3(0, _sliderScrollbar.value, 0);
+            RotationController.Rotate(rotationSpeed, _tmpGameObject);
+            _tmpText.text += _sliderScrollbar.value;   
+        }
     }
     private void OnEnable()
     {
