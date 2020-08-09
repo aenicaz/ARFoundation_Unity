@@ -1,4 +1,6 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -18,21 +20,22 @@ public class ImageTracking : MonoBehaviour
     private ARTrackedImageManager _trackedImageManager;
     private GameObject _tmpGameObject = null;
     private Slider _sliderScrollbar;
-    
+
     private void Awake()
     {
         _trackedImageManager = FindObjectOfType<ARTrackedImageManager>();
         _sliderScrollbar = FindObjectOfType<Slider>();
+        _sliderScrollbar.onValueChanged.AddListener(delegate { SliderValueChanged();});
     }
+
     private void Update()
     {
         if (rotationToggle.isOn)
         {
-            rotationSpeed = new Vector3(0, _sliderScrollbar.value, 0);
             RotationController.Rotate(rotationSpeed, _tmpGameObject);
-            _tmpText.text += _sliderScrollbar.value;   
         }
     }
+
     private void OnEnable()
     {
         _trackedImageManager.trackedImagesChanged += ImageChanged;
@@ -89,5 +92,15 @@ public class ImageTracking : MonoBehaviour
                 go.SetActive(false);
             }
         }
+    }
+
+    private void ToggleValueChanged()
+    {
+        rotationSpeed = new Vector3(0, _sliderScrollbar.value, 0);
+    }
+
+    private void SliderValueChanged()
+    {
+        ToggleValueChanged();
     }
 }

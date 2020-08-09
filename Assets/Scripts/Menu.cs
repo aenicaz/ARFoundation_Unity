@@ -1,19 +1,30 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class Menu : MonoBehaviour
 {
-    public void SwitchScene(int number)
+    public enum Scenes
     {
-        switch (number)
+        Exit = 0,
+        Menu = 1,
+        ImageRecognition = 2,
+        SurfaceRecognition = 3,
+    }
+    public void SwitchScene(int scene)
+    {
+        switch ((Scenes)scene)
         {
-            case 0:
+            case ((Scenes)0):
                 Application.Quit();
                 break;
-            case 1:
+            case ((Scenes)1):
+                SceneManager.LoadScene("Scenes/MainMenu/Menu");
+                break;
+            case ((Scenes)2):
                 SceneManager.LoadScene("Scenes/ImageRecognition/ImageRecogition");
                 break;
-            case 2:
+            case ((Scenes)3):
                 SceneManager.LoadScene("Scenes/SurfaceRecogintion/main");
                 break;
         }
